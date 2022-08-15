@@ -1,0 +1,12 @@
+name: UCB Person Title
+description: 'Programatically generates a Person Page title on creation using First and Last Name fields'
+type: module
+core_version_requirement: '^8.9 || ^9'
+dependencies:
+  - file
+  - field
+  - image
+  - system
+
+version: '1.0.0'
+package: 'UCB Person Title'
