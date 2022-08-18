@@ -26,6 +26,10 @@ function ucb_person_title_form_node_ucb_person_form_alter(&$form, FormStateInter
 function ucb_person_title_builder($entity_type, NodeInterface $node, $form, FormStateInterface $form_state) {
   $last = $node->get('field_ucb_person_last_name')->value;
   $first = $node->get('field_ucb_person_first_name')->value;
+
+  // Remove whitespace
+  $last = str_replace(' ', '', $last);
+  $first = str_replace(' ', '', $first);
  
   $node->setTitle( $first . ' ' . $last);
 }
