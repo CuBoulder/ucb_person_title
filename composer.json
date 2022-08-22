@@ -1,6 +1,6 @@
 {
     "name": "cu-boulder/ucb_person_title",
     "description": "Programatically generates a Person Page title using First and Last Name fields",
-    "license": "MIT",
+    "license": "GPL2.0-or-later",
     "type": "drupal-custom-module"
 }
