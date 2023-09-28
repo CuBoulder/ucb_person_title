@@ -1,0 +1,5 @@
+services:
+  ucb_person_title.event_subscriber:
+    class: Drupal\ucb_person_title\EventSubscriber\UcbPersonTitleSubscriber
+    tags:
+      - { name: event_subscriber }

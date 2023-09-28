@@ -1,48 +1,5 @@
 <?php
 
-use Drupal\Core\Form\FormStateInterface;
-use Drupal\node\NodeInterface;
- 
-/**
- * Implements hook_form_FORM_ID_alter().
- *
- * @param $form
- * @param \Drupal\Core\Form\FormStateInterface $form_state
- * @param $form_id
- */
-
- // Handles Person Page creation
-function ucb_person_title_form_node_ucb_person_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-    $form['title']['#access'] = FALSE;
-    $form['#entity_builders'][] = 'ucb_person_title_builder';
-}
-
-// Handles Person Page edit form
-function ucb_person_title_form_node_ucb_person_edit_form_alter(&$form, FormStateInterface $form_state, $form_id){
-  $form['title']['#access'] = FALSE;
-  $form['#entity_builders'][] = 'ucb_person_title_builder';
-}
- 
-/**
- * Title builder for Person Page & Person Page Edit Form.
- *
- * @param $entity_type
- * @param \Drupal\node\NodeInterface $node
- * @param $form
- * @param \Drupal\Core\Form\FormStateInterface $form_state
- */
-function ucb_person_title_builder($entity_type, NodeInterface $node, $form, FormStateInterface $form_state) {
-  $last = $node->get('field_ucb_person_last_name')->value;
-  $first = $node->get('field_ucb_person_first_name')->value;
-
-  // Remove whitespace
-  $last = str_replace(' ', '', $last);
-  $first = str_replace(' ', '', $first);
- 
-  // Set title
-  $node->setTitle( $first . ' ' . $last);
-}
-
-?>
-
-
+// This file can be left empty since the logic has been moved to the 
+// UcbPersonTitleEventSubscriber class using the events system.
+// use Drupal\Core\Routing\RouteMatchInterface;
