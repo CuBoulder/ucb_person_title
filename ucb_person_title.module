@@ -10,8 +10,6 @@ use Drupal\node\NodeInterface;
  * @param \Drupal\Core\Form\FormStateInterface $form_state
  * @param $form_id
  */
-
- // Handles Person Page creation
 function ucb_person_title_form_node_ucb_person_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     $form['title']['#access'] = FALSE;
     $form['#entity_builders'][] = 'ucb_person_title_builder';
@@ -42,7 +40,3 @@ function ucb_person_title_builder($entity_type, NodeInterface $node, $form, Form
   // Set title
   $node->setTitle( $first . ' ' . $last);
 }
-
-?>
-
-
