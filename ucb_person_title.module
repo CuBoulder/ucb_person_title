@@ -34,8 +34,8 @@ function ucb_person_title_builder($entity_type, NodeInterface $node, $form, Form
   $first = $node->get('field_ucb_person_first_name')->value;
 
   // Remove whitespace
-  $last = str_replace(' ', '', $last);
-  $first = str_replace(' ', '', $first);
+  $last = trim($last);
+  $first = trim($first);
  
   // Set title
   $node->setTitle( $first . ' ' . $last);
